@@ -1,0 +1,215 @@
+
+
+body {
+    /* background-image: url('../images/parchment.jpg');*/
+    background-color: #EDEEF7
+    /*-webkit-filter: blur(1px);*/
+    /*-moz-filter: blur(1px);*/
+    /*-o-filter: blur(1px);*/
+    /*-ms-filter: blur(1px);*/
+    /*filter: blur(1px);*/
+
+}
+
+.title_page, .information_type {
+
+    text-align: center;
+    margin: 12px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 48px;
+    color: inherit;
+    text-rendering: optimizelegibility;
+}
+
+.title_page {
+    /* font-family: Papyrus, fantasy; */
+    font-size: 40px;
+    margin-bottom: 30px;
+
+}
+
+.information_type {
+    /*font-family: Papyrus, fantasy;*/
+    margin-top: 1px;
+    margin-bottom: 2px;
+    font-size: 28px;
+
+}
+
+.article_title {
+    font-weight: bold;
+
+}
+
+.article_detail {
+    font-style: italic;
+    display: inline;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 16px
+}
+
+.powered_by {
+    text-align: right;
+    margin-right: 10px;
+}
+
+hr.type {
+    margin-top: 1px;
+    margin-bottom: 15px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.lists {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1px;
+    margin-bottom: 30px;
+}
+
+/* fix for the navbar covering content */
+body {
+	font-size:14px;
+	background-color: rgb(237, 238, 247);
+}
+
+footer {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	color: #777;
+	text-align: center;
+	clear:both;
+	border-top: 1px solid #e5e5e5;
+}
+
+footer div {
+	margin-top:2px;
+}
+
+footer p {
+	font-size: x-small;
+}
+
+legend {
+	margin-bottom:5px;
+	background-color: rgb(187,204, 211);
+	text-indent: 8px;
+	font-weight: bold;
+	font-size: medium;
+	line-height: 2;
+}
+
+legend small {
+	margin-bottom:10px;
+	font-size:18px;
+	color: black}
+
+label, input, button, select, textarea {
+	font-size:14px;
+	line-height:18px;
+	display: inline;
+}
+
+.btn-small{
+	font-size:12px; line-height:14px;
+}
+
+.fht-thead {
+	background-color: rgb(187,204, 211);
+}
+
+/* making the modal wider */
+body .modal {
+	width: 1000px;
+	margin-left: -470px;
+	height: 800px;
+}
+
+body .modal-body {
+	max-height: 85%;
+}
+
+.result{
+	font-size:85%;
+	white-space: normal;
+}
+
+.nav{
+	margin-bottom: 0px;
+}
+
+.table-result-cell{
+	width:25vw;
+}
+
+.scrollable-y{
+	overflow-y: scroll;
+}
+
+.results-container {
+	height:300px;
+}
+
+.table-fixed{
+	display:block;
+	overflow-y:scroll;
+}
+
+.table-scrollable-y{
+	display:block;
+	overflow-y:scroll;
+}
+
+.selectable {
+	width:100%;
+	background-color: white;
+}
+
+.table-div{
+	display:table;
+	width: 100%;
+	margin-left: 8px;
+}
+
+table, th, td {
+	border: 1px solid #e5e5e5
+}
+
+.div-border {
+	border: 1px solid #e5e5e5
+}
+
+a {
+	color: #0000EE;
+}
+
+div#main_container {
+	overflow: auto;
+}
+
+#navigation_menu ul {
+	background-color: #000000;
+}
+
+#navigation_menu li {
+	float: left;
+}
+
+#navigation_menu li a {
+	/*padding: 3px;*/
+}
+
+#manage-options li {
+	clear: both;
+}

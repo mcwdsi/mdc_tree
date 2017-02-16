@@ -1,0 +1,45 @@
+<div class="title_page">{{title}}</div>
+<div class="container" id="results_tab">
+    <h2 class="text-center" ng-hide="headers || recentPubs || reports || datasets || pubs || software || extraContent">Loading...</h2>
+    <div id="recent_publications" ng-show='recents.length > 0' ng-cloak>
+        <hr class="type">
+        <div class="information_type">Very Recent Items</div>
+        <hr class="type">
+        <div class='lists'>
+            <ul>
+                <li ng-repeat="recent in recents | orderBy: '-date'" ng-if='(recent.sourceOrganization || recent.journal) && recent.date'>
+                    <div class="article_title">{{recent.title}}</div>
+                    <div class="article_detail"> {{recent.sourceOrganization}}{{recent.journal}}. {{recent.date}}.</div>
+                    <a class="glyphicon glyphicon-link" ng-href="{{recent.linkout}}"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+   
+    <div id="headers" ng-show='headers.length > 0' ng-cloak>
+        <div ng-repeat="header in headers track by $index">
+            <div ng-show="header.items.length > 0">
+                <hr class="type">
+                <div class="information_type">{{header.title}}</div>
+                <hr class="type">
+                <div class='lists'>
+                    <ul>
+                        <li ng-repeat="item in header.items">
+                            <div class="article_title">{{item.pubTitle}}</div>
+                            <div class="article_detail">{{item.journal}}. {{item.published}}. Funded by: {{item.idLabel}} ({{item.grantTitle}}).</div>
+                            <a class="glyphicon glyphicon-link" ng-href="{{item.linkout}}"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="additional" ng-show='extraContent' ng-cloak>
+        <hr class="type">
+        <div class="information_type">{{extraTitle}}</div>
+        <hr class="type">
+        <div ng-bind-html="extraContent">
+        </div>
+
+    </div>
+</div>

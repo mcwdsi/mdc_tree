@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<!-- build:css(.) styles/vendor.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+</head>
+<body ng-app="dujourApp">
+	<div id="main_container" class="container">
+		<div id="content-div" style="float: left; width: 100%; margin-bottom: 10px;">
+			<div ng-view=""></div>
+			<div class="powered_by"><i>Powered by <a href=http://ide.obc.io/#>OBC.ide</a></i></div>
+		</div>
+		<div class="footer">
+      <hr></hr>
+      <div class="container">
+        <p>Copyright 2017 - University of Florida and University of Pittsburgh, OBC.ide web client, version 2.0.0.alpha<span ng-show='dbName && loggedIn'>, DB: {{dbName}}</span></p>
+        <p><small>This work was funded by awards R01GM101151 and U24GM110707 from the National Institute for General Medical Sciences (NIGMS). The work does not represent the view of NIGMS.</small></p>
+        <p><small>BY USING THE OBC.IDE YOU AGREE THAT NO WARRANTIES OF ANY KIND ARE MADE BY THE UNIVERSITY OF PITTSBURGH (UNIVERSITY) WITH RESPECT TO THE DATA PROVIDED IN THE OBC.IDE OR ANY USE THEREOF, AND THE UNIVERSITY HEREBY DISCLAIM THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. THE UNIVERSITY SHALL NOT BE LIABLE FOR ANY CLAIMS, LOSSES OR DAMAGES OF ANY KIND ARISING FROM THE DATA PROVIDED IN THE OBC.IDE OR ANY USE THEREOF.</small></p>
+      </div>
+    </div>
+	</div>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-1447108-11', 'auto');
+          ga('send', 'pageview');
+	</script>
+
+	<!-- build:js(.) scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-touch/angular-touch.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="scripts/app.js"></script>
+	<script src="scripts/controllers/main.js"></script>
+	<!-- endbuild -->
+</body>
+
+</html>
