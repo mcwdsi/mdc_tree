@@ -25,6 +25,6 @@ angular
         controllerAs: 'main'
       })
       .otherwise({
-        redirectTo: '/'
+        
       });
   });

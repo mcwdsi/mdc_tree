@@ -42,6 +42,12 @@ body {
 
 }
 
+.anchor_menu {
+    font-weight: bold;
+    color:black;
+
+}
+
 .article_detail {
     font-style: italic;
     display: inline;
@@ -140,6 +146,15 @@ body .modal-body {
 	max-height: 85%;
 }
 
+
+td, th {
+    padding: 0;
+}
+
+.noBorder {
+    border:none !important;
+}
+
 .result{
 	font-size:85%;
 	white-space: normal;
@@ -148,6 +163,7 @@ body .modal-body {
 .nav{
 	margin-bottom: 0px;
 }
+
 
 .table-result-cell{
 	width:25vw;
@@ -182,9 +198,10 @@ body .modal-body {
 	margin-left: 8px;
 }
 
-table, th, td {
-	border: 1px solid #e5e5e5
+ul#noBullet {
+    list-style-type:none;
 }
+
 
 .div-border {
 	border: 1px solid #e5e5e5
@@ -192,6 +209,26 @@ table, th, td {
 
 a {
 	color: #0000EE;
+}
+a.nav-link:link
+{
+   color: #fb3f00;
+   text-decoration: none;
+}
+a.nav-link:visited
+{
+   color: #fb3f00;
+   text-decoration: none;
+}
+a.nav-link:hover
+{
+   color: #fb3f00;
+   text-decoration: none;
+}
+a.nav-link:active
+{
+   color: #fb3f00;
+   text-decoration: none;
 }
 
 div#main_container {
@@ -212,4 +249,30 @@ div#main_container {
 
 #manage-options li {
 	clear: both;
+}
+
+
+
+/* DivTable.com */
+.divTable{
+	display: table;
+	width: 100%;
+}
+.divTableRow {
+	display: table-row;
+}
+.divTableHeading {
+
+}
+.divTableCell, .divTableHead {
+	display: table-cell;
+	padding: 3px 10px;
+}
+.divTableHeading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
+}
+.divTableBody {
+	display: table-row-group;
 }
