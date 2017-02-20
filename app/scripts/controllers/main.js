@@ -16,7 +16,7 @@ angular.module('dujourApp')
         $scope.headers = [];
         headers.items = [];
         var configName = $location.search().configName;
-        $http.get(APIURL + '/grants', {    
+        $http.get(APIURL + '/pubs_page', {    
         }).success(function (data) {
             console.log(data)
             var publications = {};
