@@ -9,7 +9,7 @@
  * # MainCtrl
  * Controller of the obc-grants
  */
-angular.module('pubspp') 
+angular.module('pubsApp') 
     .controller('MainCtrl', function ($scope, $location, $http) {
 
         var APIURL = 'http://localhost:3000';
