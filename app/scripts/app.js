@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name dujourApp
+ * @name pubsApp
  * @description
- * # dujourApp
+ * # pubsApp
  *
  * Main module of the application.
  */
 angular
-  .module('dujourApp', [
+  .module('pubsApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

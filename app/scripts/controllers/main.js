@@ -9,7 +9,7 @@
  * # MainCtrl
  * Controller of the obc-grants
  */
-angular.module('dujourApp') 
+angular.module('pubspp') 
     .controller('MainCtrl', function ($scope, $location, $http) {
 
         var APIURL = 'http://localhost:3000';
