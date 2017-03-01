@@ -12,13 +12,14 @@
 angular.module('pubsApp') 
     .controller('MainCtrl', function ($scope, $location, $http) {
 
-        var APIURL = 'http://localhost:3000';
+        var APIURL = 'http://api.obc.io';
         $scope.headers = [];
         headers.items = [];
         var configName = $location.search().configName;
         $http.get(APIURL + '/pubs_page', {    
         }).success(function (data) {
             console.log(data)
+            console.log(data.length)
             var publications = {};
             var pubsByYear = {}
             //The first loop gets rid of duplicates
@@ -54,7 +55,7 @@ angular.module('pubsApp')
                     pubsByYear[year].push(publications[key]);
                 } 
             }
-            
+
             $http.get('scripts/configs/publications.json')
             .success(function (config) {
                 //set the publications by the dates we get from the json config file.
@@ -78,9 +79,9 @@ angular.module('pubsApp')
                             if(currentDate in pubsByYear){
                                 pubsByYear[currentDate].sort(function(a,b) {return (a.published < b.published) ? 1 : ((b.published < a.published) ? -1 : 0);} );
                                 for(pub in pubsByYear[currentDate]){
-                                    total = total-1
                                     pubsByYear[currentDate][pub].index = total;
                                     header.items = header.items.concat(pubsByYear[currentDate][pub])
+                                    total = total-1
                             }
                         }
                       }
@@ -91,9 +92,9 @@ angular.module('pubsApp')
                         if(currentDate in pubsByYear){
                             pubsByYear[currentDate].sort(function(a,b) {return (a.published < b.published) ? 1 : ((b.published < a.published) ? -1 : 0);} );
                             for( pub in pubsByYear[currentDate] ){
-                                total = total-1
                                 pubsByYear[currentDate][pub].index = total;
                                 header.items = header.items.concat(pubsByYear[currentDate][pub])   
+                                total = total-1
                             }
                         }
                     }
