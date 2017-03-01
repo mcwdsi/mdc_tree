@@ -26,7 +26,7 @@
                             <ul id="noBullet">
                                 <li ng-repeat="item in header.items">
                                     <div class="article_title"> {{item.index}}.  {{item.pubTitle}}</div>
-                                    <div class="article_detail">{{item.journal}}. {{item.published}}. Funded by: {{item.idLabel}} ({{item.grantTitle}}).</div>
+                                    <div class="article_detail">PMID: {{item.pmid}} {{item.journal}}. {{item.published}}. Funded by: {{item.idLabel}} ({{item.grantTitle}}).</div>
                                     <a class="glyphicon glyphicon-link" ng-href="{{item.linkout}}"></a>
                                 </li> 
                             </ul>

@@ -34,7 +34,8 @@ angular.module('pubsApp')
                             pubTitle: data[i].pubName,
                             grantTitle: data[i].title,
                             linkout: data[i].linkout,
-                            idLabel: data[i].grantidlabel
+                            idLabel: data[i].grantidlabel,
+                            pmid: data[i].pmid
                         };
                         publications[key] = current
                         total = total + 1;
