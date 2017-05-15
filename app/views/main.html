@@ -1,42 +1,36 @@
-<div class="title_page">{{title}}</div> 
-<div class="container" id="results_tab">
-    <h2 class="text-center" ng-hide="headers || recentPubs || reports || datasets || pubs || software || extraContent">Loading...</h2>
-<div class="divTable">
-<div class="divTableBody">
-<div class="divTableRow">
-<div class="divTableCell">
-<div id="scrollArea" ng-controller="headerCtrl">
- <div ng-repeat="header in headers track by $index">
-    <div ng-show="header.items.length > 0">
-        <ul id="noBullet">
-              <a  class = "anchor_menu" href="" ng-click="gotoAnchor($index)">{{header.title}}</a>
-        </ul>
-    </div>
-</div>
-        </div>
-</div> 
-<div class="divTableCell">
-    <div id="headers" ng-show='headers.length > 0' ng-cloak>
-                <div ng-repeat="header in headers track by $index">
-                    <div ng-show="header.items.length > 0">
-                        <hr class="type">
-                        <div class="information_type" id="anchor{{$index}}">{{header.title}}</div>
-                        <hr class="type">
-                        <div class='lists'>
-                            <ul id="noBullet">
-                                <li ng-repeat="item in header.items">
-                                    <div class="article_title"> {{item.index}}.  {{item.pubTitle}}</div>
-                                    <div class="article_detail">PMID: {{item.pmid}} {{item.journal}}. {{item.published}}. Funded by: {{item.idLabel}} ({{item.grantTitle}}).</div>
-                                    <a class="glyphicon glyphicon-link" ng-href="{{item.linkout}}"></a>
-                                </li> 
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+<!-- used to recursively build tree -->
+<script type="text/ng-template" id="tree-renderer.html">
+  <span ng-click="term.show = !term.show"
+        ng-class="term.show ? 'glyphicon glyphicon-chevron-down' : 'glyphicon glyphicon-chevron-right';"
+        ng-show="hasChildren(term)"
+        aria-hidden="true"
+        accordion close-others="true"></span> 
+  <span class="glyphicon glyphicon-minus"
+        ng-hide="hasChildren(term)"
+        aria-hidden="true"
+        accordion close-others="true"></span> 
+  <span ng-click="display_detail(term)" >{{term.label}}</span>
+  <ul ng-show="term.show" ng-init="showChildren(term)">
+    <li ng-repeat="term in term.children" ng-include="'tree-renderer.html'"></li>
+  </ul>
+</script>
+<!-- main container for page -->
+<div class="container">
+  <div id="retrievalTermsContainer">
+    <div class=" panel panel-primary">
+      <div class="panel-body">
+        <div class='row' ng-hide='searchHidden'>
+          <div class='col-xs-8' >
+            <h4>MDC Tree</h4>
+            <div id="retrievalTree" class="well well-sm tree">
+              <ul>
+                <li ng-hide="areTermsEmpty(retrievalTerms)">Loading...</li>
+                <li ng-repeat="term in retrievalTerms" ng-include="'tree-renderer.html'"   ></li>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
-</div>
-</div>
+  </div>
+<div>

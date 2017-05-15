@@ -9,8 +9,9 @@
  * Main module of the application.
  */
 angular
-  .module('pubsApp', [
-    'ngAnimate',
+  .module('mdsApp', [
+    'ui.bootstrap',
+  'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',

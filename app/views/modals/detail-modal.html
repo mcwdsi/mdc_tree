@@ -1,0 +1,103 @@
+<div class="modal-header">
+  <a type="button" ng-click = 'closeModal()' style="float: right;"><span class="glyphicon glyphicon-remove"></span></a>
+  <h2 class='text-center'>Details</h2>
+</div>
+<div class="modal-body">
+  <table class="table table-striped table-bordered">
+    <tr ng-show="item.label">
+      <td>Title</td>
+      <td>{{item.label}}</td>
+    </tr>
+    <tr ng-show="item.synopsis">
+      <td>Synopsis</td>
+      <td>{{item.synopsis}}</td>
+    </tr>
+    <tr ng-show="item.accessPage">
+      <td>Access page</td>
+      <td>
+        <a target="_blank" href='{{item.accessPage}}'>
+          {{item.accessPage}}
+        </a>
+      </td>
+    </tr>
+    <tr ng-show="item.documentationDescription">
+      <td>Documentation description</td>
+      <td>
+        <a target="_blank" href='{{item.documentationUrl}}'>{{item.documentationDescription}}</a>
+      </td>
+    </tr>
+    <tr ng-show="item.executableName">
+      <td>Exacutable Name</td>
+      <td ng-href="{{executableUrl}}">{{item.executableName}}</td>
+    </tr>
+    <tr ng-show="item.sourceCodeRepositoryUrl">
+      <td>Source code</td>
+      <td>
+        <a target="_blank" href='{{item.sourceCodeRepositoryUrl}}'>{{item.sourceCodeRepositoryUrl}}</a>
+      </td>
+    </tr>
+    <tr ng-show="item.webAppUrl">
+      <td>Web application URL</td>
+       <td>
+        <a target="_blank" href='{{item.webAppUrl}}'>{{item.webAppUrl}}</a>
+      </td>
+    </tr>
+    <tr ng-show="item.licenseName">
+      <td>License Name</td>
+      <td>
+        <a target="_blank" href='{{item.licenseUrl}}'>{{item.licenseName}}</a>
+      </td>
+    </tr>
+    <tr ng-show="item.websiteUrl">
+      <td>Website URL</td>
+      <td>
+        <a target="_blank" href='{{item.websiteUrl}}'>{{item.websiteUrl}}</a>
+      </td>
+    </tr>
+    <tr ng-show="item.developerName">
+      <td>Developer Name</td>
+      <td>{{item.developerName}}</td>
+    </tr>
+     <tr ng-show="item.pubAbout">
+      <td>Publication</td>
+      <td>{{item.pubAbout}}</td>
+    </tr>
+     <tr ng-show="item.pubThatUsedRelease">
+      <td>Publication that used release???</td>
+      <td>{{item.pubThatUsedRelease}}</td>
+    </tr>
+     <tr ng-show="item.inputSpecLabel">
+      <td>Input spec label</td>
+      <td>{{item.inputSpecLabel}}</td>
+    </tr>
+    <tr ng-show="item.outputSpecLabel">
+      <td>Output spec label</td>
+      <td>{{item.outputSpecLabel}}</td>
+    </tr>
+    <tr ng-show="item.olympus">
+      <td>Olympus</td>
+      <td>{{item.olympus}}</td>
+    </tr>
+    <tr ng-show="item.uids">
+      <td>UIDs</td>
+      <td>{{item.uids}}</td>
+    </tr>
+    <tr ng-show="item.measureLabel">
+      <td>Measure Label</td>
+      <td>{{item.measureLabel}}</td>
+    </tr>
+     <tr ng-show="item.version">
+      <td>Version</td>
+      <td>{{item.version}}</td>
+    </tr>
+     <tr ng-show="item.doi">
+      <td>DOI</td>
+      <td>
+        <a target="_blank" href='{{item.doiUrl}}'>{{item.doi}}</a>
+      </td>
+    </tr>
+
+
+
+  </table>
+</div>

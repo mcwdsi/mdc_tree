@@ -9,115 +9,58 @@
  * # MainCtrl
  * Controller of the obc-grants
  */
-angular.module('pubsApp') 
-    .controller('MainCtrl', function ($scope, $location, $http) {
+angular.module('mdsApp') 
+    .controller('MainCtrl', function ($scope, $location, $http, $modal) {
 
-        var APIURL = 'http://api.obc.io';
-        $scope.headers = [];
-        headers.items = [];
+        var APIURL = 'http://localhost:3000';
         var configName = $location.search().configName;
-        $http.get(APIURL + '/pubs_page', {    
-        }).success(function (data) {
-            console.log(data)
-            console.log(data.length)
-            var publications = {};
-            var pubsByYear = {}
-            //The first loop gets rid of duplicates
-            var total = 0;
-            for (var i in data) {
-                if (data[i].pubName != undefined){
-                    var key = data[i].pubName
-                    if (!(key in publications)) {
-                        var current = {
-                            published: data[i].date,
-                            authors: data[i].authors,
-                            journal: data[i].journal,
-                            pubTitle: data[i].pubName,
-                            grantTitle: data[i].title,
-                            linkout: data[i].linkout,
-                            idLabel: data[i].grantidlabel,
-                            pmid: data[i].pmid
-                        };
-                        publications[key] = current
-                        total = total + 1;
-                    }
-                }
-            }
-            //The second loop puts the values by year.
-            
-            for (var key in publications) { 
-                var year = publications[key].published.split("-")[0]
-                var pub = [publications[key]]
-                if(pubsByYear[year] == undefined){
-                    pubsByYear[year] =  pub
-                }
-                else {
-                    pubsByYear[year].push(publications[key]);
-                } 
-            }
+$http.get(APIURL + '/mdc_tree')
+    .success(function (data) {
+    $scope.retrievalTerms = data
+    
+ $scope.showChildren = function (term) {
+    for (var i in term.children) {
+      term.children[i].show = true;
+    }
+  };
 
-            $http.get('scripts/configs/publications.json')
-            .success(function (config) {
-                //set the publications by the dates we get from the json config file.
-                var dates = config.dates;
-                $scope.title =config.title;
+  $scope.hasChildren = function (term) {
+    return $scope.areTermsEmpty(term.children);
+  };
 
-                for (var i in dates) {
-                    var datesRange = dates[i].date.split("-");
-                    var title =dates[i].date;
-                    if (datesRange.length > 1) {
-                        var title = datesRange[1] + "-" + datesRange[0];
-                    }
-                    var header = {};
-                    header.items = []
-                    header.title = title
-                    if (datesRange.length > 1) {
-                        //This is a range of dates
-                        var range = datesRange[0]- datesRange[1];
-                        for (var x = 0; x <= range; x++) {
-                            var currentDate = Number(datesRange[0]) - Number(x);
-                            if(currentDate in pubsByYear){
-                                pubsByYear[currentDate].sort(function(a,b) {return (a.published < b.published) ? 1 : ((b.published < a.published) ? -1 : 0);} );
-                                for(pub in pubsByYear[currentDate]){
-                                    pubsByYear[currentDate][pub].index = total;
-                                    header.items = header.items.concat(pubsByYear[currentDate][pub])
-                                    total = total-1
-                            }
-                        }
-                      }
-                    }
-                    else {
-                         //This is just one year
-                        var currentDate = dates[i].date
-                        if(currentDate in pubsByYear){
-                            pubsByYear[currentDate].sort(function(a,b) {return (a.published < b.published) ? 1 : ((b.published < a.published) ? -1 : 0);} );
-                            for( pub in pubsByYear[currentDate] ){
-                                pubsByYear[currentDate][pub].index = total;
-                                header.items = header.items.concat(pubsByYear[currentDate][pub])   
-                                total = total-1
-                            }
-                        }
-                    }
-                    if(header.items.length >0){
-                        $scope.headers.push(header)
-                    }
-                }
-           });
-           
-        });
-    })
-.controller('headerCtrl', ['$anchorScroll', '$location', '$scope',
-  function($anchorScroll, $location, $scope) {
-    $scope.gotoAnchor = function(x) {
-      var newHash = 'anchor' + x;
-      if ($location.hash() !== newHash) {
-        $anchorScroll(newHash);
-      } else {
-        $anchorScroll();
-      }
-    };
-  }
-]);
+  $scope.display_detail = function (item) {
+    //if the term that we get back is not root then we should display their information.
+    if (item.isRoot == false){
+      $modal.open({
+        animation: $scope.animationsEnabled,
+        templateUrl: 'views/modals/detail-modal.html',
+        controller: 'DetailModalInstanceController',
+        size: 'lg',
+        resolve: {
+          item: function () {
+            return item;
+          }
+        }
+    });
+    }
+    
+    return $scope.areTermsEmpty(item.children);
+  };
+
+  $scope.areTermsEmpty = function (terms) {
+    if (Object.keys(terms).length === 0 && terms.constructor === Object) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+    });
+
+
+
+})
+
 
 
 

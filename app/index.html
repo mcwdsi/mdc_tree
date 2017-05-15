@@ -10,17 +10,19 @@
 	<!-- build:css(.) styles/vendor.css -->
 	<!-- bower:css -->
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
+	<link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css" />
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="styles/main.css">
 	<!-- endbuild -->
 	
-<body ng-app="pubsApp">
+<body ng-app="mdsApp">
 	<div id="main_container" class="container">
 		<div id="content-div" style="float: left; width: 100%; margin-bottom: 10px;">
 			<div ng-view=""></div>
-			<div class="powered_by"><i>Powered by <a href=http://ide.obc.io/#>OBC.ide</a></i></div>
+			<div class="powered_by"><i>Powered by <a href=http://ide.onbc.io/#>OBC.ide</a></i></div>
 		</div>
 		<div class="footer">
       <hr></hr>
@@ -50,12 +52,24 @@
 	<script src="bower_components/angular-route/angular-route.js"></script>
 	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 	<script src="bower_components/angular-touch/angular-touch.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
+	<script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
 	<!-- endbower -->
 	<!-- endbuild -->
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.js"></script>
 	<script src="scripts/controllers/main.js"></script>
+	 <script src="scripts/controllers/modals/details.js"></script>
 	<!-- endbuild -->
 </body>
 

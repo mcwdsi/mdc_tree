@@ -1,0 +1,41 @@
+Meeting hangouts: http://betaweb.rods.pitt.edu/hangout
+Midas Meeting May 1st:
+
+generate all the MDS in OBC. 
+
+Query from all software/subtypes. 
+
+Just query IRA and name. 
+
+
+First column:
+
+Disease transmissions models
+Disease forecasters
+etc
+
+--------------------------
+Midas meeting May 3 with Upitt
+
+Are we doing just a subset or everything?
+
+Bill agrees to have software and datasets. Software is double, from datasets (SPEW, cinthia, ebola)
+
+------------------
+OBC currently has ALL SOFTWARE
+Working in SPEW cinthia and EBOLA
+
+---------------
+Come up with a couple of queries that can be done. So they can ensure the sparkle can be created. 
+
+-------------------
+
+
+We will implement the search similar to the OBC and they will implement it to the NDC.
+
+
+
+
+
+
+
