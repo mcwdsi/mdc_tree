@@ -15,22 +15,24 @@
   </ul>
 </script>
 <!-- main container for page -->
-<div class="container">
-  <div id="retrievalTermsContainer">
-    <div class=" panel panel-primary">
-      <div class="panel-body">
-        <div class='row' ng-hide='searchHidden'>
-          <div class='col-xs-8' >
-            <h4>MDC Tree</h4>
-            <div id="retrievalTree" class="well well-sm tree">
-              <ul>
-                <li ng-hide="areTermsEmpty(retrievalTerms)">Loading...</li>
-                <li ng-repeat="term in retrievalTerms" ng-include="'tree-renderer.html'"   ></li>
-              </ul>
-            </div>
+<br/>
+ <div class="row">
+    <div class="col-md-4">
+          <div id="retrievalTree" class="well well-sm tree">
+            <ul>
+              <li ng-hide="areTermsEmpty(softwareTerms)">Loading...</li>
+              <li ng-repeat="term in softwareTerms" ng-include="'tree-renderer.html'"   ></li>
+            </ul>
           </div>
-        </div>
+    </div>
+    <div class="col-md-5">
+      <div id="retrievalTree" class="well well-sm tree">
+        <ul>
+          <li ng-hide="areTermsEmpty(datasetsTerms)">Loading...</li>
+          <li ng-repeat="term in datasetsTerms" ng-include="'tree-renderer.html'"   ></li>
+        </ul>
       </div>
     </div>
-  </div>
-<div>
+</div>
+
+     

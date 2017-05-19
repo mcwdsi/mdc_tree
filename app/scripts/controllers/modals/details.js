@@ -7,7 +7,7 @@ angular.module('mdsApp').controller('DetailModalInstanceController', function ($
     if (Array.isArray(item[key])){
       var fieldData = ""
       for (var i in item[key]) {
-        fieldData = item[key][i] + ", "
+        fieldData = fieldData + item[key][i] + ", "
       }
       //we remove the last comma and space.
       parsedItem[key] = fieldData.slice(0, -2);

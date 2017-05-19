@@ -1,6 +1,6 @@
 .divider-vertical {
   height: 50px;
-  margin: 0 15px;
+  margin: 0 100px;
   border-left: 1px solid gray;
   opacity: 0.5;
 }
@@ -9,10 +9,6 @@ body {
   padding: 0;
 }
 
-.tree {
-  white-space: nowrap;
-  max-height: 10px;
-}
 
 .tree  ul {
   list-style: none;
@@ -23,7 +19,7 @@ body {
 }
 
 .chosenTerms {
-  margin-top: 20px;
+  margin-top: 10px;
   max-height: 200px;
   overflow: auto;
 }
@@ -45,5 +41,16 @@ body {
 
 .modal-body {
   overflow-x: auto  
+}
+
+table {
+  width: 100%;
+}
+
+th.from, th.date {
+  width: 15%
+}
+th.subject {
+  width: 70%;
 }
 

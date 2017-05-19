@@ -16,7 +16,8 @@ angular.module('mdsApp')
         var configName = $location.search().configName;
 $http.get(APIURL + '/mdc_tree')
     .success(function (data) {
-    $scope.retrievalTerms = data
+      $scope.softwareTerms = {"Software" : data.software}
+      $scope.datasetsTerms = {"Datasets" : data.dataset}
     
  $scope.showChildren = function (term) {
     for (var i in term.children) {
